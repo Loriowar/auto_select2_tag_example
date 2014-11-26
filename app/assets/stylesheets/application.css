@@ -10,7 +10,7 @@
  *
  *= require select2
  *= require_self
- *= require_tree .
+ *= require main
  */
 
 .select2-container.wide {
