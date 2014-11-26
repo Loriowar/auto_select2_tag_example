@@ -1,0 +1,34 @@
+%h2 Static select2 for top 5 by population
+
+= select2_tag :static_select,
+              options_from_collection_for_select(Country.order(population: :desc).limit(5), :id, :name),
+              placeholder: 'Select a country',
+              include_blank: true,
+              select2_options: {width: 'auto'}
+
+%h2 Dependent ajax select2
+
+= select2_ajax_tag :country_id,
+                   :country,
+                   '',
+                   placeholder: 'Select country',
+                   class: 'dependent-input',
+                   select2_options: {additional_ajax_data: {selector: '.dependent-input'}}
+
+= select2_ajax_tag :city_id,
+                   :city,
+                   '',
+                   placeholder: 'Select city',
+                   class: 'dependent-input',
+                   select2_options: {additional_ajax_data: {selector: '.dependent-input'}}
+
+%h2 Multi ajax select2 for top 10 by population
+
+= select2_ajax_tag :multi_countries_select2,
+                   :country,
+                   '',
+                   search_method: :top_ten,
+                   placeholder: 'Select city',
+                   class: 'multiple',
+                   select2_options: {additional_ajax_data: {selector: '.dependent-input'},
+                                     multiple: true}
