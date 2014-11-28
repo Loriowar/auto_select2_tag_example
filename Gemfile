@@ -34,8 +34,8 @@ gem 'jquery-rails'
 
 # For AutoSelect2
 gem 'select2-rails'
-gem 'auto_select2'
-gem 'auto_select2_tag'
+gem 'auto_select2', path: '~/dev/auto-select2/'
+gem 'auto_select2_tag', path: '~/dev/auto_select2_tag/'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
