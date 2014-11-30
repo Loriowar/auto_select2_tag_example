@@ -1,0 +1,6 @@
+%nav#main-menu{role: 'navigation', tabindex: '-1'}
+  - links = main_menu_links
+  - if links.present?
+    %ul
+      - links.each do |link|
+        %li= link

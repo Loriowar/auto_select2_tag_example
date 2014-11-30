@@ -14,7 +14,7 @@ module Select2SearchAdapter
               items: countries.map do |country|
                 { text: country.name,
                   id: country.id.to_s,
-                  class_name: "#{'top-country' if country.population > 2e8}"}
+                  class_name: "select2-result-label-heading #{'is-top-country' if country.population > 2e8}"}
               end,
               total: count
           }

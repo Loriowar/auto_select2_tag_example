@@ -9,5 +9,15 @@
     = ajax_select2_init_header_tags
     = ajax_multi_select2_init_header_tags
     = csrf_meta_tags
-    %body{class: "#{'no-column'}"}
-      = yield
+    %body{class: body_classes}
+      #page
+        %header#header.header{role: 'banner'}
+        #main
+          #content.column{role: 'main'}
+            = yield
+          #navigation
+            = render partial: '/layouts/main_menu'
+          - if content_for?(:sidebar_first) || content_for?(:sidebar_second)
+            %aside.sidebars
+              = render partial: '/layouts/sidebar', locals: { sidebar_id: :sidebar_first }
+              = render partial: '/layouts/sidebar', locals: { sidebar_id: :sidebar_second }
