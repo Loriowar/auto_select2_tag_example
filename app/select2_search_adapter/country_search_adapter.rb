@@ -1,4 +1,4 @@
-class CountrySearchAdapter < Select2SearchAdapter::Base
+class CountrySearchAdapter < AutoSelect2::Select2SearchAdapter::Base
   class << self
 
     def limit

@@ -1,20 +1,3 @@
-PATH
-  remote: ~/dev/auto-select2/
-  specs:
-    auto_select2 (0.1.2)
-      coffee-rails
-      railties (>= 3.1)
-      select2-rails
-
-PATH
-  remote: ~/dev/auto_select2_tag/
-  specs:
-    auto_select2_tag (0.1.1)
-      auto_select2
-      coffee-rails
-      railties (>= 3.1)
-      select2-rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +26,15 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    auto_select2 (0.1.2)
+      coffee-rails
+      railties (>= 3.1)
+      select2-rails
+    auto_select2_tag (0.1.1)
+      auto_select2
+      coffee-rails
+      railties (>= 3.1)
+      select2-rails
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -141,8 +133,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  auto_select2!
-  auto_select2_tag!
+  auto_select2
+  auto_select2_tag
   coffee-rails (~> 4.0.0)
   haml (~> 4.0.0)
   i18n

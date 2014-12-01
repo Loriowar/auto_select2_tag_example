@@ -1,4 +1,4 @@
-class CitySearchAdapter < Select2SearchAdapter::Base
+class CitySearchAdapter < AutoSelect2::Select2SearchAdapter::Base
   class << self
 
     def limit
