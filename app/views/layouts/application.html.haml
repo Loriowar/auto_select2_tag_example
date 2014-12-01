@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %title AutoSelect2TagExample
+    %meta{http_equiv: 'cleartype', content: 'on'}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = static_select2_init_header_tags
+    = ajax_select2_init_header_tags
+    = ajax_multi_select2_init_header_tags
+    = csrf_meta_tags
+    %body{class: body_classes}
+      #page
+        %header#header.header{role: 'banner'}
+        #main
+          #content.column{role: 'main'}
+            = yield
+          #navigation
+            = render partial: '/layouts/main_menu'
+          - if content_for?(:sidebar_first) || content_for?(:sidebar_second)
+            %aside.sidebars
+              = render partial: '/layouts/sidebar', locals: { sidebar_id: :sidebar_first }
+              = render partial: '/layouts/sidebar', locals: { sidebar_id: :sidebar_second }
