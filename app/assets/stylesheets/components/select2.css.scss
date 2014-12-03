@@ -1,13 +1,46 @@
 .select2-container {
   min-width: 100px;
   &.is-wide {
-    min-width: 200px;
+    min-width: 250px;
   }
   &.is-multiple {
     min-width: 150px;
   }
 }
 
-.select2-result-label-heading.is-top-country {
+.select2-result-label-heading {
+
+}
+
+.select2-result-label-heading-top-country {
   font-weight: bold;
+}
+
+.select2-result-population-level {
+
+}
+$hot-color: #d22e54;
+$middle-color: #d2ca00;
+$low-color: #03d200;
+.select2-result-population-level.is-hot {
+  background-color: $hot-color;
+}
+.select2-result-population-level.is-middle {
+  background-color: $middle-color;
+}
+.select2-result-population-level.is-low {
+  background-color: $low-color;
+}
+
+.select2-selection-population-level {
+
+}
+.select2-selection-population-level.is-hot {
+  color: $hot-color;
+}
+.select2-selection-population-level.is-middle {
+  color: $middle-color;
+}
+.select2-selection-population-level.is-low {
+  color: $low-color;
 }

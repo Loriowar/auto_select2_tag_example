@@ -18,3 +18,5 @@
 /log/*.log
 /tmp
 /Gemfile.lock
+
+.rbenv-version

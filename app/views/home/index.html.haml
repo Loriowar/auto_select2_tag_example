@@ -39,3 +39,17 @@
                    class: 'is-multiple',
                    select2_options: {additional_ajax_data: {selector: '.dependent-input'},
                                      multiple: true}
+
+%h2 Init value
+
+= select2_ajax_tag :default_country_id,
+                   {class_name: :country, text_column: :name, id_column: :id},
+                   Country.first.id,
+                   placeholder: 'Select country once again', class: 'is-wide'
+
+%h2 Alternate hash method support
+
+= select2_ajax_tag :default_country_id,
+                   {class_name: :country, text_column: :name, id_column: :id, hash_method: :to_select2_alternate},
+                   Country.first.id,
+                   placeholder: 'Select country once again', class: 'is-wide'
