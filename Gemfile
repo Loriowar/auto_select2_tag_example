@@ -15,7 +15,8 @@ gem 'protected_attributes'
 gem 'activerecord'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.2'
+gem 'sprockets', '~> 2.11.0'
 
 gem 'compass-rails'
 
