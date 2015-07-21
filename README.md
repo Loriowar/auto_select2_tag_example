@@ -14,3 +14,7 @@ For [AutoSelect2](https://github.com/Loriowar/auto_select2) and
 * how work work min-width for select2
 * how define SearchAdapter
 * how define and use custom search methods
+
+### Shut up and show a me live demo!
+
+[Here it is!](https://auto-select2-tag-example.herokuapp.com/)
