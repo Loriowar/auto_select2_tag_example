@@ -17,7 +17,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/Gemfile.lock
 
 .rbenv-version
 .rvmrc
