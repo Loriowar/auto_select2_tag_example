@@ -11,10 +11,10 @@ For [AutoSelect2](https://github.com/Loriowar/auto_select2) and
 * how use static, ajax and multi-ajax select2
 * example with dependent ajax select2 (element which options depend from each other)
 * how highlight several elements in select2 options
-* how work work min-width for select2
+* how work min-width for select2
 * how define SearchAdapter
 * how define and use custom search methods
 
-### Shut up and show a me live demo!
+### Shut up and show me a live demo!
 
 [Here it is!](https://auto-select2-tag-example.herokuapp.com/)
