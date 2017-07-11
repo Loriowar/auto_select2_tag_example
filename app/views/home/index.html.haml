@@ -1,55 +1,40 @@
 %h2 Static select2 for top 5 by population
 
 = select2_tag :static_select,
-              options_from_collection_for_select(Country.order(population: :desc).limit(5), :id, :name),
-              placeholder: 'Select a country',
-              include_blank: true,
-              select2_options: {width: 'auto'}
+              options_from_collection_for_select(biggest_countries, :id, :name),
+              auto_select2: {placeholder: 'Select a country'},
+              class: 'input is-wide',
+              include_blank: true
 
+%hr
 %h2 Dependent ajax select2
 
-= select2_ajax_tag :country_id,
-                   :country,
-                   '',
-                   placeholder: 'Select country',
-                   class: 'dependent-input',
-                   select2_options: {additional_ajax_data: {selector: '.dependent-input'}}
+= select2_tag :country_id,
+              options_from_collection_for_select(biggest_countries, :id, :name),
+              auto_select2: {placeholder: 'Select a country'},
+              class: 'input js-country-input',
+              include_blank: true
 
 = select2_ajax_tag :city_id,
-                   :city,
+                   CitySearchAdapter,
                    '',
-                   placeholder: 'Select city',
-                   class: 'dependent-input',
-                   select2_options: {additional_ajax_data: {selector: '.dependent-input'}}
+                   auto_select2: {placeholder: 'Select a city'},
+                   class: 'input js-city-input'
 
-%h2 Default ajax select2 without SearchAdapter
-
-= select2_ajax_tag :default_country_id,
-                   {class_name: :country, text_column: :name, id_column: :id},
-                   '',
-                   placeholder: 'Select country once again'
-
+%hr
 %h2 Multi ajax select2 for top 10 by population
 
 = select2_ajax_tag :multi_countries_select2,
-                   :country,
+                   TopTenCountrySearchAdapter,
                    '',
-                   search_method: :top_ten,
-                   placeholder: 'Select city',
-                   class: 'is-multiple',
-                   select2_options: {additional_ajax_data: {selector: '.dependent-input'},
-                                     multiple: true}
+                   auto_select2: {placeholder: 'Select city', multiple: true},
+                   class: 'input is-wide'
 
+%hr
 %h2 Init value
 
 = select2_ajax_tag :default_country_id,
-                   {class_name: :country, text_column: :name, id_column: :id},
+                   CountrySearchAdapter,
                    Country.first.id,
-                   placeholder: 'Select country once again', class: 'is-wide'
-
-%h2 Alternate hash method support
-
-= select2_ajax_tag :default_country_id,
-                   {class_name: :country, text_column: :name, id_column: :id, hash_method: :to_select2_alternate},
-                   Country.first.id,
-                   placeholder: 'Select country once again', class: 'is-wide'
+                   auto_select2: {placeholder: 'Select country once again'},
+                   class: 'is-wide'

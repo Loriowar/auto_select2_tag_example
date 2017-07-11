@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require select2
-//= require_tree .
+//= require auto_select2/custom
+//= require auto_select2/ajax
+//= require dependent_inputs

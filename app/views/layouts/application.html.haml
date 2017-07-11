@@ -3,11 +3,8 @@
   %head
     %title AutoSelect2TagExample
     %meta{http_equiv: 'cleartype', content: 'on'}
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = static_select2_init_header_tags
-    = ajax_select2_init_header_tags
-    = ajax_multi_select2_init_header_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     %body{class: body_classes}
       #page

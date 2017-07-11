@@ -1,24 +1,15 @@
 class CitySearchAdapter < AutoSelect2::Select2SearchAdapter::Base
+  self.searchable = City
+  self.searchable_columns = ['name']
+  self.limit = 10
+
   class << self
-
-    def limit
-      10
+    def format(item, **)
+      {id: item.id, text: item.name}
     end
 
-    def search_default(term, page, options)
-      if options[:init].nil?
-        cities = default_finder(City.by_countries(options[:country_id]), term, page: page)
-        count = default_count(City.by_countries(options[:country_id]), term)
-        {
-            items: cities.map do |city|
-              { text: city.name, id: city.id.to_s }
-            end,
-            total: count
-        }
-      else
-        get_init_values(City, options[:item_ids])
-      end
+    def relation(_term, country_id:, **)
+      super.by_countries(country_id)
     end
-
   end
 end
